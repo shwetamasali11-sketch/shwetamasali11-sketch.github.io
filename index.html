@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Shweta Masali | B.Tech CSE Student</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+            color: #222;
+            background: #f7f9fc;
+        }
+
+        header {
+            background: #ffffff;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+        }
+
+        nav {
+            max-width: 1100px;
+            margin: auto;
+            padding: 16px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: #2563eb;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 24px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: #2563eb;
+        }
+
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(135deg, #eef4ff, #ffffff);
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: 3.2rem;
+            margin-bottom: 15px;
+            color: #172554;
+        }
+
+        .hero h2 {
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: #2563eb;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 30px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 12px 24px;
+            background: #2563eb;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+
+        .button:hover {
+            background: #1d4ed8;
+        }
+
+        section {
+            max-width: 1100px;
+            margin: auto;
+            padding: 80px 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+            color: #172554;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #666;
+        }
+
+        /* About */
+        .about {
+            max-width: 800px;
+            margin: auto;
+            text-align: center;
+            font-size: 1.05rem;
+            color: #555;
+        }
+
+        /* Projects */
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            padding: 28px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
+            border: 1px solid #e5e7eb;
+            transition: transform 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card h3 {
+            margin-bottom: 12px;
+        }
+
+        .card h3 a {
+            color: #2563eb;
+            text-decoration: none;
+        }
+
+        .card h3 a:hover {
+            text-decoration: underline;
+        }
+
+        .card p {
+            color: #555;
+            margin-bottom: 18px;
+        }
+
+        .repo-link {
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .repo-link:hover {
+            text-decoration: underline;
+        }
+
+        .no-link {
+            color: #777;
+            font-size: 0.95rem;
+            font-style: italic;
+        }
+
+        /* Skills */
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .skill {
+            background: white;
+            border: 1px solid #dbeafe;
+            color: #1e40af;
+            padding: 10px 18px;
+            border-radius: 25px;
+            font-weight: 500;
+        }
+
+        /* Goal */
+        .goal {
+            max-width: 800px;
+            margin: auto;
+            text-align: center;
+            background: white;
+            padding: 35px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
+        }
+
+        .goal p {
+            color: #555;
+            font-size: 1.05rem;
+        }
+
+        /* Contact */
+        .contact {
+            text-align: center;
+        }
+
+        .contact p {
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        /* Footer */
+        footer {
+            background: #172554;
+            color: white;
+            text-align: center;
+            padding: 25px 20px;
+        }
+
+        footer p {
+            font-size: 0.95rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+
+            nav {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            nav ul {
+                gap: 12px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero h1 {
+                font-size: 2.4rem;
+            }
+
+            .hero h2 {
+                font-size: 1.2rem;
+            }
+
+            .projects {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 60px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header>
+        <nav>
+
+            <div class="logo">
+                Shweta Masali
+            </div>
+
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#goal">Goal</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+        </nav>
+    </header>
+
+
+    <!-- Home / Hero -->
+    <section id="home" class="hero">
+
+        <div class="hero-content">
+
+            <h1>Hi, I'm Shweta Masali</h1>
+
+            <h2>
+                3rd-Semester B.Tech Computer Science and Engineering Student
+            </h2>
+
+            <p>
+                Welcome to my personal portfolio. This page presents my
+                learning, practice, and work from my activities and programming
+                practice.
+            </p>
+
+            <a href="#projects" class="button">
+                View My Work
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- About Me -->
+    <section id="about">
+
+        <div class="section-title">
+
+            <h2>About Me</h2>
+
+            <p>
+                A little about my learning journey
+            </p>
+
+        </div>
+
+        <div class="about">
+
+            <p>
+                I am a 3rd-semester B.Tech Computer Science and Engineering
+                student. Through my activities and programming practice, I am
+                developing my understanding of programming, development
+                workflows, version control, collaboration, and problem-solving.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- Projects & Activities -->
+    <section id="projects">
+
+        <div class="section-title">
+
+            <h2>Projects &amp; Activities</h2>
+
+            <p>
+                My learning activities and programming practice
+            </p>
+
+        </div>
+
+        <div class="projects">
+
+            <!-- Activity 1 -->
+            <div class="card">
+
+                <h3>
+                    <a
+                        href="https://github.com/shwetamasali11-sketch/Activity-1-Dev-Environment-Setup"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        Activity 1 – Dev Environment Setup / Hello World
+                    </a>
+                </h3>
+
+                <p>
+                    This repository contains my work for Activity 1,
+                    focused on setting up the development environment and
+                    working with a Hello World project.
+                </p>
+
+                <a
+                    class="repo-link"
+                    href="https://github.com/shwetamasali11-sketch/Activity-1-Dev-Environment-Setup"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    View GitHub Repository ?
+                </a>
+
+            </div>
+
+
+            <!-- Activity 2 -->
+            <div class="card">
+
+                <h3>
+                    Activity 2 – Git &amp; GitHub
+                </h3>
+
+                <p>
+                    Worked with Git and GitHub as part of the activities,
+                    developing familiarity with version control and
+                    repository-based development.
+                </p>
+
+                <span class="no-link">
+                    No repository link provided.
+                </span>
+
+            </div>
+
+
+            <!-- Activity 3 -->
+            <div class="card">
+
+                <h3>
+                    Activity 3 – GitHub Fundamentals
+                </h3>
+
+                <p>
+                    Practiced GitHub fundamentals and repository-related
+                    work as part of the activities, supporting my
+                    understanding of version control.
+                </p>
+
+                <span class="no-link">
+                    No repository link provided.
+                </span>
+
+            </div>
+
+
+            <!-- Activity 4 -->
+            <div class="card">
+
+                <h3>
+                    Activity 4 – GitLens &amp; Collaboration
+                </h3>
+
+                <p>
+                    Worked with GitLens and pair-programming collaboration
+                    as part of my activities, helping me practice
+                    collaborative development workflows.
+                </p>
+
+                <span class="no-link">
+                    No repository link provided.
+                </span>
+
+            </div>
+
+
+            <!-- LeetCode -->
+            <div class="card">
+
+                <h3>
+                    <a
+                        href="https://github.com/shwetamasali11-sketch/leetcode-solutions"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        LeetCode Solutions
+                    </a>
+                </h3>
+
+                <p>
+                    This repository contains my LeetCode practice and
+                    solutions. It represents my continued practice of
+                    programming and problem-solving through coding questions.
+                </p>
+
+                <a
+                    class="repo-link"
+                    href="https://github.com/shwetamasali11-sketch/leetcode-solutions"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    View GitHub Repository ?
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Skills -->
+    <section id="skills">
+
+        <div class="section-title">
+
+            <h2>Skills</h2>
+
+            <p>
+                Skills supported by my activities and practice
+            </p>
+
+        </div>
+
+        <div class="skills-container">
+
+            <span class="skill">Programming</span>
+
+            <span class="skill">Problem Solving</span>
+
+            <span class="skill">Git</span>
+
+            <span class="skill">GitHub</span>
+
+            <span class="skill">Version Control</span>
+
+            <span class="skill">GitLens</span>
+
+            <span class="skill">Collaboration</span>
+
+            <span class="skill">LeetCode Practice</span>
+
+            <span class="skill">Software Development</span>
+
+        </div>
+
+    </section>
+
+
+    <!-- Career / Learning Goal -->
+    <section id="goal">
+
+        <div class="section-title">
+
+            <h2>Career / Learning Goal</h2>
+
+            <p>
+                Continuing to learn and improve
+            </p>
+
+        </div>
+
+        <div class="goal">
+
+            <p>
+                My goal is to continue improving my programming and
+                problem-solving abilities while developing my software
+                development and technical skills. I want to keep learning
+                through practical work, programming practice, and
+                collaborative development.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- Contact -->
+    <section id="contact">
+
+        <div class="section-title">
+
+            <h2>Contact</h2>
+
+            <p>
+                Connect with me
+            </p>
+
+        </div>
+
+        <div class="contact">
+
+            <p>
+                You can find my programming and learning work on GitHub.
+            </p>
+
+            <a
+                href="https://github.com/shwetamasali11-sketch"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="button">
+                Visit My GitHub
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <p>
+            © 2026 Shweta Masali | B.Tech Computer Science and Engineering Student
+        </p>
+
+    </footer>
+
+</body>
+</html>
